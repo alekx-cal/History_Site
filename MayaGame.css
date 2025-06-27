@@ -1,0 +1,252 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #0a1929, #1a3a5a);
+            color: #f0e6d2;
+            font-family: 'Quattrocento', serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            text-align: center;
+        }
+
+        header {
+            margin: 20px 0;
+            padding: 15px;
+            border-bottom: 3px solid #c19a6b;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 3.5rem;
+            color: #e6c068;
+            text-shadow: 0 0 10px rgba(230, 192, 104, 0.5);
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #c8b090;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .game-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(25, 54, 82, 0.7);
+            border-radius: 10px;
+            border: 2px solid #c19a6b;
+        }
+
+        .info-box {
+            min-width: 120px;
+        }
+
+        .info-label {
+            font-size: 0.9rem;
+            color: #c8b090;
+        }
+
+        .info-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e6c068;
+        }
+
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+            perspective: 1000px;
+        }
+
+        .card {
+            height: 140px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-front {
+            background: linear-gradient(135deg, #8b5a2b, #c19a6b);
+            border: 3px solid #e6c068;
+            font-size: 3.5rem;
+            color: #4a2c1d;
+        }
+
+        .card-back {
+            background: linear-gradient(135deg, #1a3a5a, #2d5a7a);
+            border: 3px solid #c19a6b;
+            transform: rotateY(180deg);
+            overflow: hidden;
+        }
+
+        .card-back img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .controls {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        button,a{
+            background: linear-gradient(to bottom, #e6c068, #c19a6b);
+            color: #1a3a5a;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            font-family: 'Quattrocento', serif;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            text-align: center;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(to bottom, #f0d080, #d1a56d);
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        .maya-pattern {
+            height: 40px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="40" viewBox="0 0 100 40"><rect width="100" height="40" fill="%231a3a5a"/><path d="M0,20 Q50,0 100,20 T200,20" stroke="%23c19a6b" stroke-width="1" fill="none" stroke-dasharray="10,10"/><circle cx="20" cy="20" r="5" fill="%23e6c068"/><circle cx="40" cy="20" r="5" fill="%23e6c068"/><circle cx="60" cy="20" r="5" fill="%23e6c068"/><circle cx="80" cy="20" r="5" fill="%23e6c068"/></svg>');
+            margin: 20px 0;
+        }
+        .maya-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 30px 0;
+    padding: 25px;
+    background: rgba(25, 54, 82, 0.7);
+    border-radius: 10px;
+    border: 2px solid #c19a6b;
+    transition: all 0.3s ease;
+}
+.maya-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 30px 0;
+    padding: 15px;
+    background: rgba(25, 54, 82, 0.7);
+    border-radius: 10px;
+    border: 2px solid #c19a6b;
+}
+
+.maya-button {
+    background: linear-gradient(to bottom, #e6c068, #c19a6b);
+    color: #1a3a5a;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Quattrocento', serif;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    text-align: center;
+}
+
+.maya-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(to bottom, #f0d080, #d1a56d);
+}
+
+.maya-button.active {
+    background: linear-gradient(to bottom, #c19a6b, #8b5a2b);
+    color: #f0e6d2;
+}
+
+.maya-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.maya-container p {
+    flex: 2;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+        @media (max-width: 768px) {
+            .game-board {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .card {
+                height: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .game-board {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .card {
+                height: 100px;
+            }
+        }

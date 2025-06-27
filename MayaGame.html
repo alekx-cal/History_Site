@@ -1,0 +1,58 @@
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maya Memory Match</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Quattrocento:wght@400;700&display=swap">
+    <link rel="stylesheet" href="MayaGame.css">
+</head>
+<body>
+        <nav class="maya-nav">
+            <a href="HomePage.html" class="maya-button">Maya Civilization</a>
+            <a href="Historical Context.html" class="maya-button">Historical Context</a>
+            <a href="Analysis One.html" class="maya-button">Analysis 1</a>            
+            <a href="Analysis Two.html" class="maya-button">Analysis 2</a>
+            <a href="Analysis Three.html" class="maya-button">Analysis 3</a>
+            <a href="Reflection.html" class="maya-button">Reflection</a>
+            <a href="Visual Gallery.html" class="maya-button">Visual Gallery</a>       
+            <a href="MayaGame.html" class="maya-button active">Maya Game</a>
+        </nav>
+    <div class="container">
+        <header>
+            <h1>MAYA MEMORY MATCH</h1>
+            <p class="subtitle">Match the ancient Mayan artifacts to uncover the secrets of this mysterious civilization</p>
+        </header>
+        
+        <div class="maya-pattern"></div>
+        
+        <div class="game-info">
+            <div class="info-box">
+                <div class="info-label">MOVES</div>
+                <div class="info-value" id="moves">0</div>
+            </div>
+            <div class="info-box">
+                <div class="info-label">MATCHES</div>
+                <div class="info-value" id="matches">0</div>
+            </div>
+            <div class="info-box">
+                <div class="info-label">TIME</div>
+                <div class="info-value" id="timer">0s</div>
+            </div>
+        </div>
+        
+        <div class="maya-pattern"></div>
+        
+        <div class="game-board" id="gameBoard"></div>
+        
+        <div class="maya-pattern"></div>
+        
+        <div class="controls">
+            <button id="resetBtn">New Game</button>
+            <button id="hintBtn">Show Hint</button>
+        </div>
+    </div>
+    <script src="MayaGame.js"></script>
+</body>
+</html>
